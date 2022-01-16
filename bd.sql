@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Serveur: localhost
--- Généré le : Samedi 15 Janvier 2022 à 09:59
+-- Généré le : Dimanche 16 Janvier 2022 à 22:18
 -- Version du serveur: 4.1.9
 -- Version de PHP: 4.3.10
 -- 
@@ -30,6 +30,8 @@ CREATE TABLE `livres` (
 -- Contenu de la table `livres`
 -- 
 
+INSERT INTO `livres` VALUES ('00000001', 'javascript is fun', 'hamouda ben abdennebi', 200, '04-02-2002', 'lycee marsa saada');
+INSERT INTO `livres` VALUES ('12345678', 'BBBBBB', 'BBBBB', 2222, '22-12-2222', 'BBBBB');
 
 -- --------------------------------------------------------
 
@@ -42,10 +44,11 @@ CREATE TABLE `users` (
   `Username` varchar(30) NOT NULL default '',
   `password` varchar(30) NOT NULL default '',
   PRIMARY KEY  (`User_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- 
 -- Contenu de la table `users`
 -- 
 
 INSERT INTO `users` VALUES (1, 'hamouda', 'hamoudainfo');
+INSERT INTO `users` VALUES (3, 'TRAX', 'COUScous77');

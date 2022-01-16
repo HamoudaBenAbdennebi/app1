@@ -26,26 +26,21 @@
         $ME = "";
         $idc = mysql_connect("localhost","root","");
         $c = mysql_select_db('bibiliotheque');
-        $req = "select * from livres where ISBN = '$ISBN'";
-        $resultat = mysql_query($req);
-        $c = mysql_num_rows($resultat);
-        if($c == 1){
-            $enreg=mysql_fetch_array($resultat);
-            $T = $enreg["Titre"];
-            $A = $enreg["Auteur"];
-            $Q = $enreg["Quantite_disp"];
-            $AE = $enreg["Annee_Edition"];
-            $ME = $enreg["maison_edition"];
-        }
+        $req = "delete  from livres where ISBN = $ISBN";
+        $res = mysql_query($req);
+        if($res == 1)
+            echo ('deleted');
+        
+        
     ?>
     <h2>bibiliotheque : Recherche d'un livre</h2>
-    <form action="rech.php" method='get'>
+    <form action="sup.php" method='get'>
         <input type="text" placeholder = 'ISBN' name='ISBN'><br>
-        <input type="text" placeholder = 'titre' value ='<?echo $T?>' disabled><br>
-        <input type="text" placeholder = 'auteur' value ='<?echo $A?>' disabled><br>
-        <input type="text" placeholder = 'quantite disponble' value ='<?echo $Q?>' disabled><br>
-        <input type="text" placeholder = 'annee edition' value ='<?echo $AE?>' disabled><br>
-        <input type="text" placeholder = 'maison edition' value ='<?echo $ME?>' disabled><br>
+        <input type="text" placeholder = 'titre'  disabled><br>
+        <input type="text" placeholder = 'auteur'  disabled><br>
+        <input type="text" placeholder = 'quantite disponble'  disabled><br>
+        <input type="text" placeholder = 'annee edition'  disabled><br>
+        <input type="text" placeholder = 'maison edition' ' disabled><br>
         <input type="submit" value="Rechercher">
         <input type="reset" value="annuler">
     </form>
